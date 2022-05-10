@@ -20,7 +20,7 @@ class MembersController < ApplicationController
     if @member.save
       redirect_to members_path, notice: 'Member was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new, flash[:alert] = 'You do not create member successfully.'
     end
   end
 
@@ -28,7 +28,7 @@ class MembersController < ApplicationController
     if @member.update(member_params)
       redirect_to member_path, notice: 'Member was successfully updated.'
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, flash[:alert] = 'You do not update member successfully.'
     end
   end
 

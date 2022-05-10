@@ -22,7 +22,7 @@ class TeamsController < ApplicationController
     if @team.save
       redirect_to teams_path, notice: 'Team was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new, flash[:alert] = 'You do not create team successfully.'
     end
   end
 
@@ -30,7 +30,7 @@ class TeamsController < ApplicationController
     if @team.update(team_params)
       redirect_to teams_path, notice: 'Team was successfully updated.'
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, flash[:alert] = 'You do not create team successfully.'
     end
   end
 

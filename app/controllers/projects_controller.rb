@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
       @project.member_projects.create(member_id: params[:member_ids])
       redirect_to projects_path, notice: 'Project was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new, flash[:alert] = 'You do not create project successfully.'
     end
   end
 
@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
       @project.member_projects.create(member_id: params[:project][:member_id])
       redirect_to projects_path, notice: 'Project was successfully updated.'
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, flash[:alert] = 'You do not update project successfully.'
     end
   end
 
