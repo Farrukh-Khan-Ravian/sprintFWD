@@ -1,0 +1,36 @@
+  <%= form_with(model: member, local: true) do |form| %>
+
+    <div>
+      <%= form.label :First_name %>
+      <%= form.text_field :first_name,required: true %>
+    </div>
+
+    <div>
+      <%= form.label :Last_name %>
+      <%= form.text_field :last_name,required: true  %>
+    </div>
+
+    <div>
+      <%= form.label :City %>
+      <%= form.text_field :city %>
+    </div>
+
+    <div>
+      <%= form.label :State %>
+      <%= form.text_field :state %>
+    </div>
+
+    <div>
+      <%= form.label :Country %>
+      <%= form.text_field :country %>
+    </div>
+
+    <div>
+      <%= form.label :Teams %>
+      <%= form.select :team_id, teams ,required: true  %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+<% end%>

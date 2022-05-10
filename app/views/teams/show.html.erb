@@ -1,0 +1,13 @@
+<div >
+    <p>
+    <strong>Team Name:</strong>
+    <%= @team.name %>
+    </p>
+</div>
+
+<%= render partial: 'members/member', collection: @team_members %>
+<%= link_to "Back to teams", teams_path %>
+<div>
+  <%= link_to "Edit this team", edit_team_path(@team) %> |
+  <%= button_to "Destroy this team", @team, method: :delete %>
+</div>

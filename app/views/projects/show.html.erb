@@ -1,0 +1,15 @@
+<div>
+  <p>
+    <strong>Project Name:</strong>
+    <%= @project.name %>
+  </p>
+</div>
+
+<%= render partial: 'members/member', collection: @project_members %>
+
+  
+<%= link_to "Back to projects", projects_path %>
+<div>
+  <%= link_to "Edit this project", edit_project_path(@project) %> |
+  <%= button_to "Destroy this project", @project, method: :delete %>
+</div>
