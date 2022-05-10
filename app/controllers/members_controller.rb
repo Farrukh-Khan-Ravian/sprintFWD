@@ -17,7 +17,6 @@ class MembersController < ApplicationController
 
   def create
     @member = Member.new(member_params)
-    # debugger
     if @member.save
       redirect_to members_path, notice: 'Member was successfully created.'
     else
